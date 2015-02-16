@@ -8,7 +8,10 @@ deps:
 	echo $(DEPS) | xargs -n1 go get -d
 
 build:
-	go build -o bin/sysinfo-mqtt
+	scripts/build.sh
+
+clean:
+	go clean
 
 test: deps
 	go list ./... | xargs -n1 go test -timeout=3s
