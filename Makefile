@@ -12,7 +12,7 @@ build:
 
 clean:
 	rm -f bin/* || true
- 	rm -rf .gopath || true
+	rm -rf .gopath || true
 
 test: deps
 	go list ./... | xargs -n1 go test -timeout=3s
