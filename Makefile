@@ -11,7 +11,8 @@ build:
 	scripts/build.sh
 
 clean:
-	go clean
+	rm -f bin/* || true
+ 	rm -rf .gopath || true
 
 test: deps
 	go list ./... | xargs -n1 go test -timeout=3s
