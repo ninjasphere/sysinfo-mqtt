@@ -1,7 +1,7 @@
 VERSION = `cat ./version.go | grep "Version = " | cut -d" " -f4 | sed 's/[^"]*"\([^"]*\).*/\1/'`
 DEPS = $(go list -f '{{range .TestImports}}{{.}} {{end}}' ./...)
 
-all: deps build
+all: build
 
 deps:
 	go get -d -v ./...
